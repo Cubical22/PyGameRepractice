@@ -1,6 +1,5 @@
 import pygame
 import sys
-import math
 from constants import *
 from Items.OB.OB import OB
 
