@@ -2,6 +2,7 @@ import pygame
 import sys
 import math
 from constants import *
+from Items.OB.OB import OB
 
 import Items.Player as Player
 
@@ -12,6 +13,9 @@ window = pygame.display.set_mode(SCREEN_SIZE)
 # variables used for the moving ball animatio
 animation_value = 0
 rotation_multipler = 1
+
+# spawning obs
+OBS.append(OB())
 
 # main game loop
 while True:
