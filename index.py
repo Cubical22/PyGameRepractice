@@ -15,7 +15,7 @@ animation_value = 0
 rotation_multipler = 1
 
 # spawning obs
-OBS.append(OB())
+OBS.extend([OB(0, 20), OB(1,40), OB(2, 200)])
 
 # main game loop
 while True:
@@ -35,5 +35,9 @@ while True:
 
     # drawing the player balls (will be moved later)
     Player.draw_player(window, animation_value)
+
+    # drawing OBs
+    for ob in OBS:
+        ob.draw(window)
 
     pygame.display.update() # updating the display
