@@ -6,6 +6,7 @@
 
 - OBspawn:
     - spawning of obs
+    > basically we will a layer value that shows the distance of each OB from the bottom of the screen. then we will have an offset value (just being the abs(animation value) to move only on positive postion). the display and the collision will update based on the offset and layer
     - moving obs based on the rotation speed
     - adding collision to the player
     - creating the mighty *infinite loop*
