@@ -8,3 +8,4 @@ OBS = [] # this array is a constant, but can be changed in case required
 LAYER_DISTANCE = 180
 LAYER_OFFSET = 220 # the distance of the first layer from the bottom of the screens
 OB_COLOR = (255,255,255)
+OB_SIZE = (100,40)

@@ -14,13 +14,19 @@ animation_value = 0
 rotation_multipler = 1
 
 # spawning obs
+LEFT = 20
+RIGHT = SCREEN_SIZE[0] - 20 - OB_SIZE[0]
+MIDDLE = SCREEN_SIZE[0] / 2 - OB_SIZE[0] / 2
+
 OBS.extend([
-    OB(0,20),
-    OB(1,20),
-    OB(2,20),
-    OB(3,20),
-    OB(4,20),
-    OB(5,20),
+    OB(0, LEFT),
+    OB(1, RIGHT),
+    OB(2, MIDDLE),
+    OB(3, RIGHT),
+    OB(4, LEFT),
+    OB(5, MIDDLE),
+    OB(6, RIGHT),
+    OB(7, RIGHT),
 ])
 ob_offset = 0
 
