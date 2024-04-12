@@ -1,7 +1,7 @@
 import pygame
 import sys
-import math
 from constants import *
+from Items.OB.OB import OB
 
 import Items.Player as Player
 
@@ -13,11 +13,31 @@ window = pygame.display.set_mode(SCREEN_SIZE)
 animation_value = 0
 rotation_multipler = 1
 
+# spawning obs
+LEFT = 20
+RIGHT = SCREEN_SIZE[0] - 20 - OB_SIZE[0]
+MIDDLE = SCREEN_SIZE[0] / 2 - OB_SIZE[0] / 2
+
+OBS.extend([
+    OB(0, LEFT),
+    OB(1, RIGHT),
+    OB(2, MIDDLE),
+    OB(3, RIGHT),
+    OB(4, LEFT),
+    OB(5, MIDDLE),
+    OB(6, RIGHT),
+    OB(7, RIGHT),
+])
+ob_offset = 0
+
 # main game loop
 while True:
     # updating the animation value based on the rotation multiplier
     # basically the multiplier just reversed the movement when clicked
     animation_value += ROTATION_SPEED * rotation_multipler
+
+    # value used to move the OBs based on layers
+    ob_offset -= ROTATION_SPEED * 57
 
     for e in pygame.event.get(): # event handling
         if e.type == pygame.QUIT: # exit event
@@ -31,5 +51,9 @@ while True:
 
     # drawing the player balls (will be moved later)
     Player.draw_player(window, animation_value)
+
+    # drawing OBs
+    for ob in OBS:
+        ob.draw(window, ob_offset)
 
     pygame.display.update() # updating the display
