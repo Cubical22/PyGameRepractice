@@ -1,0 +1,7 @@
+so, basically to detect collision, we need to do some calculcations
+main idea:
+
+we will make lines for each box (the edges) and consider the distance of each edge
+from the center of each ball
+if the distance is less than the radious of that ball, then, we have collision
+otherwise, we don't, obviously
