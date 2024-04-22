@@ -50,10 +50,12 @@ while True:
     pygame.draw.rect(window,(10,10,20), (0,0,SCREEN_SIZE[0],SCREEN_SIZE[1]))
 
     # drawing the player balls (will be moved later)
-    Player.draw_player(window, animation_value)
+    player_cordinates = Player.draw_player(window, animation_value) # ((X1, Y1),(X2, Y2))
 
     # drawing OBs
     for ob in OBS:
-        ob.draw(window, ob_offset)
+        ob_cordinate = ob.draw(window, ob_offset) # (x, y)
+
+    ############################## collision detenction ######################################
 
     pygame.display.update() # updating the display
