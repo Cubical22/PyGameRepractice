@@ -18,19 +18,16 @@ class OB:
 
     def check_collision(self, player_pos, ob_offset): # here we will use the second way mentioned
         # checking for pos to make sure only needed data is generated
-        X = self.x
-        Y = SCREEN_SIZE[1] - self.size[1] - self.layer * LAYER_DISTANCE - LAYER_OFFSET - ob_offset
+        for player in player_pos:
+            X = self.x
+            Y = SCREEN_SIZE[1] - self.size[1] - self.layer * LAYER_DISTANCE - LAYER_OFFSET - ob_offset
 
-        bottom_right = (X + self.size[0], Y + self.size[1])
-        bottom_left = (X, Y + self.size[1])
+            bottom_right = (X + self.size[0], Y + self.size[1])
+            bottom_left = (X, Y + self.size[1])
+            top_right = (X + self.size[0], Y) if self.place_index == 0 or self.place_index == 1 else None
+            top_left = (X, Y) if self.place_index == 2 or self.place_index == 1 else None
 
-        # !!! might need some adjustments
-        if self.place_index == 0: # left side
-            top_right = (X + self.size[0], Y)
-            # ...
-        elif self.place_index == 1: # middle side
-            top_right = (X + self.size[0], Y)
-            top_left = (X, Y)
-            # ...
-        elif self.place_index == 2: # right side
-            top_left = (X, Y)
+            if player[1] > Y and player[1] < Y + self.size[1]: # ball is in between
+                print("ball between")
+            elif player[0] > X and player[0] < X + self.size[0]: # ball is under
+                print("ball is under")
