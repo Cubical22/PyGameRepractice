@@ -49,9 +49,10 @@ while True:
     player_cordinates = Player.draw_player(window, animation_value) # ((X1, Y1),(X2, Y2))
 
     # drawing OBs
-    for ob in OBS:
-        ob_cordinate = ob.draw(window, ob_offset) # (x, y)
-
-    ############################## collision detenction ######################################
+    for ob in OBS: 
+        # plan is to check for collision inside of the ob class
+        # since great amount of data needed is already inside the ob class
+        ob.draw(window, ob_offset) # (x, y)
+        ob.check_collision(player_cordinates, ob_offset)
 
     pygame.display.update() # updating the display
