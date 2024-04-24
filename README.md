@@ -4,7 +4,7 @@
 
 # branch plans
 
-- OBspawn:
+- OB spawn:
     - spawning of obs
     > basically we will a layer value that shows the distance of each OB from the bottom of the screen. then we will have an offset value (just being the abs(animation value) to move only on positive postion). the display and the collision will update based on the offset and layer
     - moving obs based on the rotation speed
@@ -23,7 +23,7 @@
 
 - Touches:
     - flashing background upon start and death
-    - using the ob pattern to retain upon dieing 
+    - using the ob pattern to retain upon dying 
     - saving the top score
 - crazy touches:
     - saving top score on a server with their names 💾

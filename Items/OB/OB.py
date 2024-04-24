@@ -32,7 +32,7 @@ class OB:
 
             d = None
 
-            if player[1] > Y and player[1] < Y + self.size[1]: # ball is in between                
+            if Y < player[1] < Y + self.size[1]: # ball is in between
                 if self.place_index == 0: # the ob on the left side
                     d = dis_point_from_line_by_points(top_right, bottom_right, player)
                     
@@ -46,7 +46,7 @@ class OB:
                     d = dis_point_from_line_by_points(top_left, bottom_right, player)
 
 
-            elif player[0] > X and player[0] < X + self.size[0]: # ball is under
+            elif X < player[0] < X + self.size[0]: # ball is under
                 d = dis_point_from_line_by_points(bottom_left, bottom_right, player)
 
             if d and d < CIRCLE_RADIUS:

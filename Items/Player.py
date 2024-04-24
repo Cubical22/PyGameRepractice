@@ -13,4 +13,4 @@ def draw_player(window,animation_value):
     pygame.draw.circle(window, (210,100,100), 
                        (X2, Y2), CIRCLE_RADIUS)
 
-    return ((X1, Y1),(X2, Y2))
+    return (X1, Y1),(X2, Y2)
