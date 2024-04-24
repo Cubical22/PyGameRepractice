@@ -13,20 +13,16 @@ window = pygame.display.set_mode(SCREEN_SIZE)
 animation_value = 0
 rotation_multipler = 1
 
-# spawning obs
-LEFT = 20
-RIGHT = SCREEN_SIZE[0] - 20 - OB_SIZE[0]
-MIDDLE = SCREEN_SIZE[0] / 2 - OB_SIZE[0] / 2
-
+# 0: left 1: middle 2: right
 OBS.extend([
-    OB(0, LEFT),
-    OB(1, RIGHT),
-    OB(2, MIDDLE),
-    OB(3, RIGHT),
-    OB(4, LEFT),
-    OB(5, MIDDLE),
-    OB(6, RIGHT),
-    OB(7, RIGHT),
+    OB(0, 0),
+    OB(1, 2),
+    OB(2, 1),
+    OB(3, 2),
+    OB(4, 0),
+    OB(5, 1),
+    OB(6, 2),
+    OB(7, 2),
 ])
 ob_offset = 0
 
