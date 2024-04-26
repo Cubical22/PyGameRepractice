@@ -49,5 +49,5 @@ class OB:
             elif X < player[0] < X + self.size[0]: # ball is under
                 d = dis_point_from_line_by_points(bottom_left, bottom_right, player)
 
-            if d and d < CIRCLE_RADIUS:
+            if d and d < CIRCLE_RADIUS - 10:
                 self.collided = True
