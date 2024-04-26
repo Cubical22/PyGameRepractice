@@ -51,3 +51,5 @@ class OB:
 
             if d and d < CIRCLE_RADIUS - 10:
                 self.collided = True
+
+        return Y

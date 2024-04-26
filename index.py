@@ -27,6 +27,8 @@ OBS.extend([
 ])
 ob_offset = 0
 
+GENERATOR = Generator()
+
 # main game loop
 while True:
     # updating the animation value based on the rotation multiplier
@@ -56,6 +58,9 @@ while True:
         # plan is to check for collision inside the ob class
         # since great amount of data needed is already inside the ob class
         ob.draw(window, ob_offset) # (x, y)
-        ob.check_collision(player_coordinates, ob_offset)
+        ob_y = ob.check_collision(player_coordinates, ob_offset)
+
+        if ob_y > SCREEN_SIZE[1] + 10: # the ob has moved under the screen
+            GENERATOR.generate_ob(ob)
 
     pygame.display.update() # updating the display
