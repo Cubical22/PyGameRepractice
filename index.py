@@ -30,10 +30,10 @@ ob_offset = 0
 while True:
     # updating the animation value based on the rotation multiplier
     # basically the multiplier just reversed the movement when clicked
-    animation_value += ROTATION_SPEED * rotation_multiplier
+    animation_value += ROTATION_SPEED * rotation_multiplier * LAYER_DISTANCE / LAYER_FACTOR_DEVIDER
 
     # value used to move the OBs based on layers
-    ob_offset -= ROTATION_SPEED * 57
+    ob_offset -= ROTATION_SPEED * 57 * LAYER_DISTANCE / LAYER_FACTOR_DEVIDER
 
     for e in pygame.event.get(): # event handling
         if e.type == pygame.QUIT: # exit event
