@@ -12,7 +12,7 @@ window = pygame.display.set_mode(SCREEN_SIZE)
 
 # variables used for the moving ball animation
 animation_value = 0
-rotation_multiplier = 1
+rotation_multiplier = 0.9
 
 # 0: left 1: middle 2: right
 OBS.extend([

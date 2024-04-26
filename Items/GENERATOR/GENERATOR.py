@@ -23,5 +23,3 @@ class Generator:
         # adding the new one
         OBS.append(OB(next_layer, placement))
         OBS.remove(ob)
-
-        print("replaced")
