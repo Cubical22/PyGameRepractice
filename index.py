@@ -2,6 +2,7 @@ import pygame
 import sys
 from constants import *
 from Items.OB.OB import OB
+from Items.GENERATOR.GENERATOR import Generator
 
 import Items.Player as Player
 
@@ -11,7 +12,7 @@ window = pygame.display.set_mode(SCREEN_SIZE)
 
 # variables used for the moving ball animation
 animation_value = 0
-rotation_multiplier = 1
+rotation_multiplier = 0.9
 
 # 0: left 1: middle 2: right
 OBS.extend([
@@ -26,14 +27,16 @@ OBS.extend([
 ])
 ob_offset = 0
 
+GENERATOR = Generator()
+
 # main game loop
 while True:
     # updating the animation value based on the rotation multiplier
     # basically the multiplier just reversed the movement when clicked
-    animation_value += ROTATION_SPEED * rotation_multiplier
+    animation_value += ROTATION_SPEED * rotation_multiplier * LAYER_DISTANCE / LAYER_FACTOR_DEVIDER
 
     # value used to move the OBs based on layers
-    ob_offset -= ROTATION_SPEED * 57
+    ob_offset -= ROTATION_SPEED * 57 * LAYER_DISTANCE / LAYER_FACTOR_DEVIDER
 
     for e in pygame.event.get(): # event handling
         if e.type == pygame.QUIT: # exit event
@@ -55,6 +58,9 @@ while True:
         # plan is to check for collision inside the ob class
         # since great amount of data needed is already inside the ob class
         ob.draw(window, ob_offset) # (x, y)
-        ob.check_collision(player_coordinates, ob_offset)
+        ob_y = ob.check_collision(player_coordinates, ob_offset)
+
+        if ob_y > SCREEN_SIZE[1] + 10: # the ob has moved under the screen
+            GENERATOR.generate_ob(ob)
 
     pygame.display.update() # updating the display
