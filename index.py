@@ -2,6 +2,7 @@ import pygame
 import sys
 from constants import *
 from Items.OB.OB import OB
+from Items.GENERATOR.GENERATOR import Generator
 
 import Items.Player as Player
 
