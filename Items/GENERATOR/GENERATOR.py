@@ -8,7 +8,17 @@ class Generator:
         # then remove the last ob from the list
 
         next_layer = ob.layer + 8 # layer used to add the new OB
-        placement = random.randint(0, 2) # left middle right
+
+        placement = None
+        while True:
+            placement = random.randint(0, 2) # left middle right
+
+            last_cell_pos = OBS[-1].place_index
+
+            if last_cell_pos == 1 and placement == 1:
+                continue
+
+            break
 
         # adding the new one
         OBS.append(OB(next_layer, placement))

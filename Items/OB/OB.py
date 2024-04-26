@@ -8,6 +8,8 @@ POSES = (20, SCREEN_SIZE[0] / 2 - OB_SIZE[0] / 2, SCREEN_SIZE[0] - 20 - OB_SIZE[
 class OB:
     def __init__(self, layer, place_index):
         self.x = POSES[place_index]
+        self.place_index = place_index
+
         self.layer = layer
         self.size = OB_SIZE
 
