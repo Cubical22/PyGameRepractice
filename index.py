@@ -3,6 +3,7 @@ import sys
 from constants import *
 from Items.OB.OB import OB
 from Items.GENERATOR.GENERATOR import Generator
+from Items.STATE_MANAGER.STATE_MANAGER import State_manager
 
 import Items.Player as Player
 
@@ -28,6 +29,7 @@ OBS.extend([
 ob_offset = 0
 
 GENERATOR = Generator()
+MANAGER = State_manager()
 
 # main game loop
 while True:
@@ -42,7 +44,7 @@ while True:
         if e.type == pygame.QUIT: # exit event
             pygame.quit()
             sys.exit(0)
-        if e.type == pygame.MOUSEBUTTONDOWN: # reverse uppon click
+        if e.type == pygame.MOUSEBUTTONDOWN: # reverse upon click
             rotation_multiplier *= -1
 
     # clearing the view with a color
@@ -58,9 +60,12 @@ while True:
         # plan is to check for collision inside the ob class
         # since great amount of data needed is already inside the ob class
         ob.draw(window, ob_offset) # (x, y)
-        ob_y = ob.check_collision(player_coordinates, ob_offset)
+        (ob_y, collision) = ob.check_collision(player_coordinates, ob_offset)
 
         if ob_y > SCREEN_SIZE[1] + 10: # the ob has moved under the screen
             GENERATOR.generate_ob(ob)
+
+        if collision:
+            MANAGER.collided()
 
     pygame.display.update() # updating the display

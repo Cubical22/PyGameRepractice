@@ -23,6 +23,7 @@ class OB:
 
     def check_collision(self, player_pos, ob_offset): # here we will use the second way mentioned
         # checking for pos to make sure only needed data is generated
+        Y = 0
         for player in player_pos:
             X = self.x
             Y = SCREEN_SIZE[1] - self.size[1] - self.layer * LAYER_DISTANCE - LAYER_OFFSET - ob_offset
@@ -51,7 +52,8 @@ class OB:
             elif X < player[0] < X + self.size[0]: # ball is under
                 d = dis_point_from_line_by_points(bottom_left, bottom_right, player)
 
-            if d and d < CIRCLE_RADIUS - 10:
+            if d and d < CIRCLE_RADIUS - 10 and not self.collided:
                 self.collided = True
+                return Y, True
 
-        return Y
+        return Y, False
