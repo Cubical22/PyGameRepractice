@@ -4,11 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="bcf8a9f2-38ed-41ca-9c12-f6c4a03a142a" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/Items/STATE_MANAGER/STATE_MANAGER.py" afterDir="false" />
+    <list default="true" id="b60edc3b-9c15-449c-9d2b-502773394cc4" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Items/OB/OB.py" beforeDir="false" afterPath="$PROJECT_DIR$/Items/OB/OB.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/constants.py" beforeDir="false" afterPath="$PROJECT_DIR$/constants.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Items/STATE_MANAGER/STATE_MANAGER.py" beforeDir="false" afterPath="$PROJECT_DIR$/Items/STATE_MANAGER/STATE_MANAGER.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/index.py" beforeDir="false" afterPath="$PROJECT_DIR$/index.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -16,20 +14,13 @@
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
-  <component name="FileTemplateManagerImpl">
-    <option name="RECENT_TEMPLATES">
-      <list>
-        <option value="Python Script" />
-      </list>
-    </option>
-  </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
   </component>
-  <component name="ProjectId" id="2fYS7LiuDxmoDD25BdNXmx67vqG" />
+  <component name="ProjectId" id="2fsYwu77IQuSwtMDeQbFClQKuEw" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
@@ -45,12 +36,11 @@
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
     "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
     "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
   <component name="RunManager">
-    <configuration name="main" type="PythonConfigurationType" factoryName="Python">
+    <configuration name="index" type="PythonConfigurationType" factoryName="Python" nameIsGenerated="true">
       <module name="PyGameRepractice" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -77,31 +67,19 @@
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="bcf8a9f2-38ed-41ca-9c12-f6c4a03a142a" name="Changes" comment="" />
-      <created>1713976355259</created>
+      <changelist id="b60edc3b-9c15-449c-9d2b-502773394cc4" name="Changes" comment="" />
+      <created>1714591494792</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
-      <updated>1713976355259</updated>
-      <workItem from="1713976358688" duration="1154000" />
-      <workItem from="1714227946347" duration="1113000" />
+      <updated>1714591494792</updated>
+      <workItem from="1714591501855" duration="427000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
   </component>
-  <component name="Vcs.Log.Tabs.Properties">
-    <option name="TAB_STATES">
-      <map>
-        <entry key="MAIN">
-          <value>
-            <State />
-          </value>
-        </entry>
-      </map>
-    </option>
-  </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
-    <SUITE FILE_PATH="coverage/PyGameRepractice$main.coverage" NAME="main Coverage Results" MODIFIED="1713977304955" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/PyGameRepractice$index.coverage" NAME="index Coverage Results" MODIFIED="1714591907120" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
   </component>
 </project>

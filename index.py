@@ -64,8 +64,11 @@ while True:
 
         if ob_y > SCREEN_SIZE[1] + 10: # the ob has moved under the screen
             GENERATOR.generate_ob(ob)
+            MANAGER.score += 1
 
         if collision:
             MANAGER.collided()
+
+    MANAGER.update_score()
 
     pygame.display.update() # updating the display

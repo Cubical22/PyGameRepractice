@@ -1,4 +1,5 @@
 from constants import MAX_HEART_COUNT
+import pygame
 
 class State_manager:
     heart_count = 0
@@ -10,7 +11,9 @@ class State_manager:
 
     def collided(self): # activated when collision happens
         self.heart_count -= 1
-        print(self.heart_count)
 
         if self.heart_count < 0:
             print("lost")
+
+    def update_score(self):
+        print(f'\rDodge the walls! ⭐ score: {self.score} ⭐ heart(s): {self.heart_count} ⭐                ', end="")
