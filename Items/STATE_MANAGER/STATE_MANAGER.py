@@ -1,4 +1,4 @@
-from constants import MAX_HEART_COUNT
+from constants import MAX_HEART_COUNT, OBS
 import pygame
 
 class State_manager:
@@ -12,8 +12,11 @@ class State_manager:
     def collided(self): # activated when collision happens
         self.heart_count -= 1
 
-        if self.heart_count < 0:
-            print("lost")
+        if self.heart_count < 0: # you have ran out of lives
+            self.heart_count = MAX_HEART_COUNT
+            self.score = 0            
+
+            return True
 
     def update_score(self):
         print(f'\rDodge the walls! ⭐ score: {self.score} ⭐ heart(s): {self.heart_count} ⭐                ', end="")

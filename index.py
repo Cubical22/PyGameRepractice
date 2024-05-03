@@ -66,8 +66,11 @@ while True:
             GENERATOR.generate_ob(ob)
             MANAGER.score += 1
 
-        if collision:
-            MANAGER.collided()
+        if collision: # if the function returns True, that means you have ran out of lives
+            if MANAGER.collided(): # if is dead
+                animation_value = 0
+                ob_offset = 0
+                GENERATOR.reset_ob()
 
     MANAGER.update_score()
 
