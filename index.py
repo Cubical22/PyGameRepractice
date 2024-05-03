@@ -14,6 +14,7 @@ window = pygame.display.set_mode(SCREEN_SIZE)
 # variables used for the moving ball animation
 animation_value = 0
 rotation_multiplier = 0.9
+speed_addition = 0
 
 # 0: left 1: middle 2: right
 OBS.extend([
@@ -35,10 +36,14 @@ MANAGER = State_manager()
 while True:
     # updating the animation value based on the rotation multiplier
     # basically the multiplier just reversed the movement when clicked
-    animation_value += ROTATION_SPEED * rotation_multiplier * LAYER_DISTANCE / LAYER_FACTOR_DEVIDER
+    animation_value += (ROTATION_SPEED + speed_addition) * rotation_multiplier * LAYER_DISTANCE \
+                    / LAYER_FACTOR_DEVIDER
 
     # value used to move the OBs based on layers
-    ob_offset -= ROTATION_SPEED * 57 * LAYER_DISTANCE / LAYER_FACTOR_DEVIDER
+    ob_offset -= (ROTATION_SPEED + speed_addition) * 57 * LAYER_DISTANCE / LAYER_FACTOR_DEVIDER
+
+    # slowly increasing the speed
+    speed_addition += 0.00000001
 
     for e in pygame.event.get(): # event handling
         if e.type == pygame.QUIT: # exit event
@@ -70,6 +75,8 @@ while True:
             if MANAGER.collided(): # if is dead
                 animation_value = 0
                 ob_offset = 0
+                rotation_multiplier = 0
+
                 GENERATOR.reset_ob()
 
     MANAGER.update_score()
