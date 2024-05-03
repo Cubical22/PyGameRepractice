@@ -48,7 +48,7 @@ while True:
             rotation_multiplier *= -1
 
     # clearing the view with a color
-    pygame.draw.rect(window,(10,10,20), (0,0,SCREEN_SIZE[0],SCREEN_SIZE[1]))
+    pygame.draw.rect(window, BG_COLOR, (0,0,SCREEN_SIZE[0],SCREEN_SIZE[1]))
 
     # drawing the player balls (will be moved later)
     player_coordinates = Player.draw_player(window, animation_value)
