@@ -13,7 +13,7 @@ window = pygame.display.set_mode(SCREEN_SIZE)
 
 # variables used for the moving ball animation
 animation_value = 0
-rotation_multiplier = 0.9
+rotation_multiplier = ROTATION_MULTIPLIER_BASE_VALUE
 speed_addition = 0
 
 # 0: left 1: middle 2: right
@@ -75,7 +75,8 @@ while True:
             if MANAGER.collided(): # if is dead
                 animation_value = 0
                 ob_offset = 0
-                rotation_multiplier = 0
+                speed_addition = 0
+                rotation_multiplier = ROTATION_MULTIPLIER_BASE_VALUE
 
                 GENERATOR.reset_ob()
 
