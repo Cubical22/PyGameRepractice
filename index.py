@@ -32,9 +32,12 @@ ob_offset = 0
 
 GENERATOR = Generator()
 MANAGER = State_manager()
+CLOCK = pygame.time.Clock()
 
 # main game loop
 while True:
+    CLOCK.tick(60)
+
     # updating the animation value based on the rotation multiplier
     # basically the multiplier just reversed the movement when clicked
     animation_value += (ROTATION_SPEED + speed_addition) * rotation_multiplier * LAYER_DISTANCE \
@@ -44,7 +47,7 @@ while True:
     ob_offset -= (ROTATION_SPEED + speed_addition) * 57 * LAYER_DISTANCE / LAYER_FACTOR_DEVIDER
 
     # slowly increasing the speed
-    speed_addition += 0.00000001
+    speed_addition += 0.00004
 
     for e in pygame.event.get(): # event handling
         if e.type == pygame.QUIT: # exit event
