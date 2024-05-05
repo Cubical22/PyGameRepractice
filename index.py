@@ -85,6 +85,12 @@ while True:
 
                 GENERATOR.reset_ob()
 
-    MANAGER.update_score()
+    # displaying the score on the screen, top right corner
+    font = pygame.font.Font(None, 36)
+    text = font.render(str(f'SCORE: {str(MANAGER.score)}'), True, (0,0,0))
+    text_rect = text.get_rect()
+    text_rect.centerx = window.get_width() - text_rect.width + 30
+    text_rect.y = 20
+    window.blit(text, text_rect)
 
     pygame.display.update() # updating the display

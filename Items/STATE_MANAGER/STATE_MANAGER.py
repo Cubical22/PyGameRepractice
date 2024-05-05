@@ -17,6 +17,3 @@ class State_manager:
             self.score = 0            
 
             return True
-
-    def update_score(self):
-        print(f'\rDodge the walls! ⭐ score: {self.score} ⭐ heart(s): {self.heart_count} ⭐                ', end="")
